@@ -48,6 +48,6 @@ window.addEventListener('load', function() {
 		titleInput.value = "";
 		timeInput.value = "";
 		//Display values.
-		document.getElementById("opomniki").innerHTML = "<div class=\'opomnik senca rob\'>\n<div class=\'naziv_opomnika\'>" + remTitle + "</div>\n<div class=\'cas_opomnika\'> Opomnik čez <span>" + remTime + "</span> sekund.</div>\n</div>";
+		document.getElementById("opomniki").innerHTML += "<div class=\'opomnik senca rob\'>\n<div class=\'naziv_opomnika\'>" + remTitle + "</div>\n<div class=\'cas_opomnika\'> Opomnik čez <span>" + remTime + "</span> sekund.</div>\n</div>";
 	});
 });
