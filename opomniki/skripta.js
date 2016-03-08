@@ -18,9 +18,30 @@ window.addEventListener('load', function() {
 	setInterval(posodobiOpomnike, 1000);
 	
 	var submitButton = document.getElementById("prijavniGumb");
-	submitButton.addEventListener("click", function() {
+	submitButton.addEventListener("click", function(e) {
+		e.preventDefault();
+		
+		//Retrieve user's name.
 		var name = document.getElementById("uporabnisko_ime").value;
+		//Insert name in the welcome message.
 		document.getElementById("uporabnik").innerHTML = name;
+		//Hide prompt.
 		document.getElementsByClassName("pokrivalo").item(0).style.display = "none";
+	});
+	
+	var reminderButton = document.getElementById("dodajGumb");
+	reminderButton.addEventListener("click", function(e) {
+		e.preventDefault();
+		
+		//Retrieve value from title and time input for reminder.
+		var titleInput = document.getElementById("naziv_opomnika");
+		var timeInput = document.getElementById("cas_opomnika");
+		var remTitle = titleInput.value;
+		var remTime = timeInput.value;
+		//Reset title and time input.
+		titleInput.value = "";
+		timeInput.value = "";
+		//Display values.
+		document.getElementById("opomniki").innerHTML = "<div class=\'opomnik\'>\n<div class=\'naziv_opomnika\'>" + remTitle + "</div>\n<div class=\'cas_opomnika\'> Opomnik čez <span>" + remTime + "</span> sekund.</div>\n</div>";
 	});
 });
