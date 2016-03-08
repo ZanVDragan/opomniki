@@ -56,6 +56,7 @@ telo {
   top: 0;
   left: 0;
   z-index: 10;
+  opacity: 0.85;
   background-color: #ccc;
   display: flex;
   align-items: center;

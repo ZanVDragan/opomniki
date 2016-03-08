@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
 		
-		for (i = 0; i < opomniki.length; i++) {
+		for (var i = 0; i < opomniki.length; i++) {
 			var opomnik = opomniki[i];
 			var casovnik = opomnik.querySelector("span");
 			var cas = parseInt(casovnik.innerHTML);
@@ -17,4 +17,10 @@ window.addEventListener('load', function() {
 	}
 	setInterval(posodobiOpomnike, 1000);
 	
+	var submitButton = document.getElementById("prijavniGumb");
+	submitButton.addEventListener("click", function() {
+		var name = document.getElementById("uporabnisko_ime").value;
+		document.getElementById("uporabnik").innerHTML = name;
+		document.getElementsByClassName("pokrivalo").item(0).style.display = "none";
+	});
 });
